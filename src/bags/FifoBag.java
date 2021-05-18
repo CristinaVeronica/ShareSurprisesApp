@@ -6,8 +6,7 @@ import java.util.ArrayList;
 
 public class FifoBag implements IBag {
 
-    private ArrayList<ISurprise> fifoBagSurprises = new ArrayList<>();
-    //private ArrayList<IBag> fifoBags = new ArrayList<>();
+    private final ArrayList<ISurprise> fifoBagSurprises = new ArrayList<>();
 
     @Override
     public void put(ISurprise surprise) {
@@ -16,20 +15,26 @@ public class FifoBag implements IBag {
 
     @Override
     public void put(IBag bagOfSurprises) {
-        while (!bagOfSurprises.isEmpty()) {
+        int counter = bagOfSurprises.size();
+        while (counter > 0) {
+            System.out.println("[FIFO_BAG.PUT[bag]]: Copying surprise from Bag to FifoBag");
             ISurprise surprise = bagOfSurprises.takeOut();
             fifoBagSurprises.add(surprise);
+            counter--;
         }
     }
 
     @Override
     public ISurprise takeOut() {
-        ISurprise surprise = null;
-        if (!fifoBagSurprises.isEmpty()) {
-            surprise = fifoBagSurprises.get(0);
-            System.out.println(surprise);
-            fifoBagSurprises.remove(0);
+        if (fifoBagSurprises.isEmpty()) {
+            System.out.println("[FIFO_BAG.TAKE_OUT]: Empty list");
+            return null;
         }
+
+        ISurprise surprise = fifoBagSurprises.get(0);
+        fifoBagSurprises.remove(0);
+        System.out.println("[FIFO_BAG.TAKE_OUT]: " + surprise.toString());
+
         return surprise;
     }
 
@@ -44,7 +49,7 @@ public class FifoBag implements IBag {
     }
 
     @Override
-    public void display(){
+    public void display() {
         for (int i = 0; i < fifoBagSurprises.size(); i++) {
             System.out.println(fifoBagSurprises.get(i));
         }

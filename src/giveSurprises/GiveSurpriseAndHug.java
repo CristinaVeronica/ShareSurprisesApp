@@ -7,7 +7,7 @@ public class GiveSurpriseAndHug extends AbstractGiveSurprises {
 
     @Override
     public void giveWithPassion(){
-        super.giveAll();
-        System.out.println("Warm wishes and a big hug!");
+        giveAll();
+        System.out.println("[GIVE_SURPRISE_AND_HUG.GIVE_WITH_PASSION]: Warm wishes and a big hug!");
     }
 }

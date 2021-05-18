@@ -9,6 +9,7 @@ public class GiveSurpriseAndApplause extends AbstractGiveSurprises {
     @Override
     public void giveWithPassion(){
         giveAll();
-        System.out.println("[GIVE_SURPRISE_AND_APPLAUSE.GIVE_WITH_PASSION]: Loud applause to you… For it is in giving that we receive.");
+        System.out.println("[GIVE_SURPRISE_AND_APPLAUSE.GIVE_WITH_PASSION]: Loud applause to you… For it" +
+                " is in giving that we receive.");
     }
 }

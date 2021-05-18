@@ -6,6 +6,7 @@ import bags.RandomBag;
 import bags.IBag;
 import surprises.ISurprise;
 
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 public abstract class AbstractGiveSurprises {

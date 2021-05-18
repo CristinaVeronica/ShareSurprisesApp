@@ -53,9 +53,9 @@ public class FortuneCookie implements ISurprise {
     }
 
     public static FortuneCookie generate() {
-        int position = Utils.generateRandomNumber(quotes.length - 1);
+        int position = Utils.generateRandomNumber(quotes.length);
         String message = quotes[position];
-        System.out.println("Congrats! You've received a fortune cookie with following message :" + message);
+        System.out.println("Congrats! You've received a fortune cookie with following message:" + message);
 
         return new FortuneCookie(message);
     }

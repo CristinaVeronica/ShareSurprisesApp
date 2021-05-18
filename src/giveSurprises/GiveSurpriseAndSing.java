@@ -7,7 +7,8 @@ public class GiveSurpriseAndSing extends AbstractGiveSurprises {
 
     @Override
     public void giveWithPassion(){
-        super.give();
-        System.out.println("Singing a nice song, full of joy and genuine excitement…");
+        give();
+        System.out.println("[GIVE_SURPRISE_AND_SING.GIVE_WITH_PASSION]: Singing a nice song, full of joy and " +
+                "genuine excitement…");
     }
 }

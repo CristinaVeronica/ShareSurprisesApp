@@ -25,14 +25,17 @@ public class MinionToy implements ISurprise {
     }
 
     public static MinionToy generate() {
+        if (counter >= minions.length-1) {
+            counter = 0;
+        }
         String minionName = minions[counter];
         counter++;
-        System.out.println("Congrats! You received a minion called " + minionName);
+        System.out.println("Congrats! You've received a minion called " + minionName);
         return new MinionToy(minionName);
     }
 
     @Override
     public String toString() {
-        return "The name of the minion toy is " + this.getName();
+        return "You've received a minion toy " + this.getName()  + "!";
     }
 }
